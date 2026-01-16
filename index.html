@@ -26,46 +26,45 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 5px;
             touch-action: manipulation;
         }
 
         .container {
             width: 100%;
-            max-width: 500px;
-            height: 95vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 15px;
+            padding: 10px;
             position: relative;
         }
 
-        /* Encabezado */
+        /* Encabezado mejorado */
         .header {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 12px 15px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border-radius: 15px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .logo h1 {
             font-family: 'Fredoka One', cursive;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             background: linear-gradient(45deg, #00ff88, #00ccff);
             -webkit-background-clip: text;
             background-clip: text;
@@ -74,40 +73,39 @@
         }
 
         .logo i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #00ff88;
             filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.5));
         }
 
         .score-container {
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 5px;
+            gap: 15px;
         }
 
         .score-box {
             background: rgba(0, 0, 0, 0.4);
-            padding: 8px 15px;
-            border-radius: 12px;
+            padding: 8px 12px;
+            border-radius: 10px;
             font-weight: 600;
-            min-width: 100px;
             text-align: center;
             border: 2px solid rgba(0, 255, 136, 0.3);
+            min-width: 80px;
         }
 
         .score-label {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             opacity: 0.8;
+            margin-bottom: 3px;
         }
 
         .score-value {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #00ff88;
             font-weight: 700;
         }
 
-        /* Área del juego */
+        /* Área del juego más grande */
         .game-area {
             width: 100%;
             flex-grow: 1;
@@ -116,14 +114,14 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            margin: 10px 0;
+            margin: 5px 0;
         }
 
         #gameCanvas {
-            width: 100%;
-            max-width: 400px;
-            height: 70vw;
-            max-height: 400px;
+            width: 95vw;
+            height: 95vw;
+            max-width: 450px;
+            max-height: 450px;
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             background: rgba(0, 10, 20, 0.8);
@@ -132,46 +130,16 @@
             image-rendering: crisp-edges;
         }
 
-        .game-info {
-            width: 100%;
-            max-width: 400px;
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-            padding: 0 5px;
-        }
-
-        .info-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 15px;
-            border-radius: 12px;
-            text-align: center;
-            min-width: 80px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .info-label {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin-bottom: 5px;
-        }
-
-        .info-value {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #00ccff;
-        }
-
-        /* Controles táctiles */
+        /* Controles táctiles mejorados */
         .controls {
             width: 100%;
             max-width: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-            padding: 15px;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -180,24 +148,32 @@
         .direction-row {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .control-btn {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: linear-gradient(145deg, rgba(0, 255, 136, 0.2), rgba(0, 204, 255, 0.2));
             border: 2px solid rgba(0, 255, 136, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: white;
             cursor: pointer;
             transition: all 0.2s;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             touch-action: manipulation;
+        }
+
+        /* ESPECIAL: Asegurar que el botón de abajo sea visible */
+        .control-btn.down {
+            background: linear-gradient(145deg, rgba(255, 100, 100, 0.3), rgba(255, 50, 50, 0.3));
+            border-color: rgba(255, 100, 100, 0.4);
+            position: relative;
+            z-index: 10;
         }
 
         .control-btn:active {
@@ -206,38 +182,33 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .control-btn.up-down {
-            width: 80px;
-            height: 80px;
-        }
-
         .control-btn.center {
-            background: linear-gradient(145deg, rgba(255, 100, 100, 0.3), rgba(255, 50, 50, 0.3));
-            border-color: rgba(255, 100, 100, 0.4);
-            font-size: 1.8rem;
+            background: linear-gradient(145deg, rgba(255, 193, 7, 0.3), rgba(255, 152, 0, 0.3));
+            border-color: rgba(255, 193, 7, 0.4);
+            font-size: 1.5rem;
         }
 
         /* Botones de acción */
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
+            gap: 15px;
+            margin-top: 10px;
             width: 100%;
         }
 
         .action-btn {
-            padding: 15px 25px;
-            border-radius: 15px;
+            padding: 14px 20px;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             border: none;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 10px;
-            min-width: 140px;
+            gap: 8px;
+            min-width: 120px;
             justify-content: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
@@ -276,7 +247,7 @@
             background: rgba(10, 15, 30, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 30px;
+            padding: 20px;
             z-index: 100;
             text-align: center;
             opacity: 0;
@@ -291,8 +262,8 @@
 
         .screen h2 {
             font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
             background: linear-gradient(45deg, #00ff88, #00ccff);
             -webkit-background-clip: text;
             background-clip: text;
@@ -300,33 +271,33 @@
         }
 
         .screen p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
             max-width: 300px;
-            line-height: 1.6;
+            line-height: 1.5;
             opacity: 0.9;
         }
 
         .final-score {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: #00ff88;
-            margin: 20px 0;
+            margin: 15px 0;
             text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
         }
 
         .screen-btn {
-            padding: 18px 35px;
-            border-radius: 15px;
+            padding: 16px 30px;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             border: none;
             cursor: pointer;
             transition: all 0.3s;
             background: linear-gradient(to right, #00ff88, #00ccff);
             color: #1a1a2e;
-            margin-top: 20px;
-            min-width: 200px;
+            margin-top: 15px;
+            min-width: 180px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
@@ -335,29 +306,33 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
 
+        /* Información del juego removida (lo que marcaste) */
+        /* Se eliminó la sección .game-info */
+
+        /* Instrucciones */
         .instructions {
-            margin-top: 30px;
-            padding: 15px;
+            margin-top: 20px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            max-width: 300px;
+            border-radius: 10px;
+            max-width: 280px;
         }
 
         .instructions h3 {
             color: #00ccff;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .instructions ul {
             text-align: left;
-            padding-left: 20px;
-            font-size: 0.9rem;
+            padding-left: 18px;
+            font-size: 0.85rem;
             opacity: 0.8;
         }
 
         .instructions li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         /* Efectos de partículas */
@@ -399,26 +374,43 @@
             animation: glow 2s infinite;
         }
 
-        /* Responsive */
+        /* Contador automático para reiniciar */
+        .countdown {
+            font-size: 1.2rem;
+            color: #ffcc00;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Responsive mejorado */
         @media (max-height: 700px) {
             .control-btn {
-                width: 70px;
-                height: 70px;
-                font-size: 2rem;
+                width: 65px;
+                height: 65px;
+                font-size: 1.8rem;
             }
             
             .action-btn {
-                padding: 12px 20px;
-                min-width: 120px;
-                font-size: 0.9rem;
+                padding: 12px 18px;
+                min-width: 110px;
+                font-size: 0.85rem;
             }
             
             .header {
-                padding: 12px 15px;
+                padding: 10px 12px;
             }
             
             .logo h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+            }
+            
+            .score-box {
+                padding: 6px 10px;
+                min-width: 70px;
+            }
+            
+            .score-value {
+                font-size: 1.3rem;
             }
         }
 
@@ -426,7 +418,7 @@
             .control-btn {
                 width: 60px;
                 height: 60px;
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .direction-row {
@@ -436,6 +428,12 @@
             .action-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 10px;
+            }
+            
+            .action-btn {
+                width: 90%;
+                min-width: auto;
             }
         }
 
@@ -447,7 +445,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Encabezado -->
+        <!-- Encabezado simplificado -->
         <div class="header">
             <div class="logo">
                 <i class="fas fa-snake"></i>
@@ -455,33 +453,22 @@
             </div>
             <div class="score-container">
                 <div class="score-box">
-                    <div class="score-label">PUNTUACIÓN</div>
+                    <div class="score-label">PUNTOS</div>
                     <div class="score-value" id="score">0</div>
                 </div>
+                <div class="score-box">
+                    <div class="score-label">MEJOR</div>
+                    <div class="score-value" id="highScore">0</div>
+                </div>
             </div>
         </div>
 
-        <!-- Área del juego -->
+        <!-- Área del juego más grande -->
         <div class="game-area">
             <canvas id="gameCanvas"></canvas>
-            
-            <div class="game-info">
-                <div class="info-box">
-                    <div class="info-label">VELOCIDAD</div>
-                    <div class="info-value" id="speed">Normal</div>
-                </div>
-                <div class="info-box">
-                    <div class="info-label">LONGITUD</div>
-                    <div class="info-value" id="length">3</div>
-                </div>
-                <div class="info-box">
-                    <div class="info-label">MEJOR</div>
-                    <div class="info-value" id="highScore">0</div>
-                </div>
-            </div>
         </div>
 
-        <!-- Controles táctiles -->
+        <!-- Controles táctiles con botón de abajo visible -->
         <div class="controls">
             <div class="direction-row">
                 <div class="control-btn up" id="upBtn">
@@ -501,6 +488,7 @@
                 </div>
             </div>
             
+            <!-- BOTÓN DE ABAJO VISIBLE Y DESTACADO -->
             <div class="direction-row">
                 <div class="control-btn down" id="downBtn">
                     <i class="fas fa-arrow-down"></i>
@@ -511,7 +499,7 @@
         <!-- Botones de acción -->
         <div class="action-buttons">
             <button class="action-btn start" id="startBtn">
-                <i class="fas fa-play"></i> COMENZAR
+                <i class="fas fa-play"></i> JUGAR
             </button>
             <button class="action-btn restart" id="restartBtn">
                 <i class="fas fa-redo"></i> REINICIAR
@@ -521,40 +509,37 @@
         <!-- Pantalla de inicio -->
         <div class="screen" id="startScreen">
             <h2>🐍 Culebrita Mágica</h2>
-            <p>¡Controla la culebrita, come la comida y hazla crecer lo más que puedas!</p>
+            <p>¡Controla la culebrita, come la comida y hazla crecer!</p>
             <div class="instructions">
                 <h3><i class="fas fa-gamepad"></i> Controles</h3>
                 <ul>
-                    <li>Usa los botones direccionales para moverte</li>
-                    <li>Evita chocar con los bordes y contigo mismo</li>
-                    <li>Cada comida te da 10 puntos</li>
-                    <li>¡Consigue la mayor puntuación posible!</li>
+                    <li>Usa los botones para moverte</li>
+                    <li>Evita chocar con bordes</li>
+                    <li>Cada comida te da puntos</li>
+                    <li>¡Consigue la mayor puntuación!</li>
                 </ul>
             </div>
             <button class="screen-btn" id="startGameBtn">
-                <i class="fas fa-play-circle"></i> JUGAR
+                <i class="fas fa-play-circle"></i> COMENZAR
             </button>
         </div>
 
         <!-- Pantalla de pausa -->
         <div class="screen" id="pauseScreen">
-            <h2><i class="fas fa-pause-circle"></i> JUEGO PAUSADO</h2>
-            <p>El juego está en pausa. Tómate tu tiempo...</p>
+            <h2><i class="fas fa-pause-circle"></i> PAUSA</h2>
+            <p>El juego está en pausa</p>
             <div class="final-score" id="pauseScore">0</div>
             <button class="screen-btn" id="resumeBtn">
                 <i class="fas fa-play"></i> CONTINUAR
             </button>
         </div>
 
-        <!-- Pantalla de game over -->
+        <!-- Pantalla de game over con reinicio automático -->
         <div class="screen" id="gameOverScreen">
             <h2><i class="fas fa-skull-crossbones"></i> GAME OVER</h2>
-            <p>¡La culebrita ha chocado! ¿Quieres intentarlo de nuevo?</p>
+            <p>¡La culebrita ha chocado!</p>
             <div class="final-score" id="finalScore">0</div>
-            <div class="info-box" style="margin: 20px auto;">
-                <div class="info-label">MEJOR PUNTUACIÓN</div>
-                <div class="info-value" id="finalHighScore">0</div>
-            </div>
+            <div class="countdown" id="countdown">Reiniciando en 3...</div>
             <button class="screen-btn" id="playAgainBtn">
                 <i class="fas fa-redo"></i> JUGAR DE NUEVO
             </button>
@@ -571,10 +556,9 @@
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         
-        // Ajustar tamaño del canvas
+        // Ajustar tamaño del canvas para pantalla más grande
         function resizeCanvas() {
-            const container = canvas.parentElement;
-            const size = Math.min(container.clientWidth, 400);
+            const size = Math.min(window.innerWidth * 0.9, 450);
             canvas.width = size;
             canvas.height = size;
         }
@@ -585,20 +569,20 @@
         let food = {};
         let direction = 'right';
         let nextDirection = 'right';
-        let gameSpeed = 150; // ms
+        let gameSpeed = 150;
         let gameRunning = false;
         let gamePaused = false;
         let score = 0;
         let highScore = localStorage.getItem('snakeHighScore') || 0;
         let gameLoop;
-        let foodType = 'normal'; // 'normal', 'golden', 'special'
+        let foodType = 'normal';
+        let countdownInterval;
         
         // Elementos de la interfaz
         const scoreElement = document.getElementById('score');
         const highScoreElement = document.getElementById('highScore');
-        const finalHighScoreElement = document.getElementById('finalHighScore');
-        const lengthElement = document.getElementById('length');
-        const speedElement = document.getElementById('speed');
+        const finalScoreElement = document.getElementById('finalScore');
+        const countdownElement = document.getElementById('countdown');
         
         // Pantallas
         const startScreen = document.getElementById('startScreen');
@@ -613,7 +597,7 @@
         const playAgainBtn = document.getElementById('playAgainBtn');
         const pauseBtn = document.getElementById('pauseBtn');
         
-        // Controles direccionales
+        // Controles direccionales - TODOS LOS BOTONES AHORA VISIBLES
         const upBtn = document.getElementById('upBtn');
         const downBtn = document.getElementById('downBtn');
         const leftBtn = document.getElementById('leftBtn');
@@ -676,7 +660,7 @@
                 }
             } while (foodOnSnake);
             
-            // Determinar tipo de comida (10% de probabilidad de comida dorada)
+            // Determinar tipo de comida
             const rand = Math.random();
             if (rand < 0.1) {
                 foodType = 'golden';
@@ -745,7 +729,6 @@
                 // Aumentar velocidad cada 5 comidas
                 if (score % 50 === 0 && gameSpeed > 70) {
                     gameSpeed -= 10;
-                    updateGameSpeed();
                     createParticles(canvas.width/2, canvas.height/2, 20, '#00CCFF');
                 }
             } else {
@@ -753,8 +736,8 @@
                 snake.pop();
             }
             
-            // Actualizar longitud
-            lengthElement.textContent = snake.length;
+            // Dibujar el nuevo estado
+            draw();
         }
         
         function draw() {
@@ -907,19 +890,6 @@
                     );
                     ctx.fill();
                     ctx.stroke();
-                    
-                    // Patrones en el cuerpo (cada 3 segmentos)
-                    if (i % 3 === 0) {
-                        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-                        ctx.beginPath();
-                        ctx.arc(
-                            segment.x * gridSize + gridSize/2,
-                            segment.y * gridSize + gridSize/2,
-                            gridSize/6,
-                            0, Math.PI * 2
-                        );
-                        ctx.fill();
-                    }
                 }
             }
         }
@@ -1067,6 +1037,22 @@
             }
         }
         
+        // NUEVO: Función de reinicio automático
+        function startCountdown() {
+            let count = 3;
+            countdownElement.textContent = `Reiniciando en ${count}...`;
+            
+            countdownInterval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    countdownElement.textContent = `Reiniciando en ${count}...`;
+                } else {
+                    clearInterval(countdownInterval);
+                    restartGame();
+                }
+            }, 1000);
+        }
+        
         function gameOver() {
             gameRunning = false;
             clearInterval(gameLoop);
@@ -1075,11 +1061,11 @@
             if (score > highScore) {
                 highScore = score;
                 localStorage.setItem('snakeHighScore', highScore);
+                highScoreElement.textContent = highScore;
             }
             
             // Mostrar pantalla de game over
-            document.getElementById('finalScore').textContent = score;
-            document.getElementById('finalHighScore').textContent = highScore;
+            finalScoreElement.textContent = score;
             showScreen(gameOverScreen);
             
             // Efecto de explosión
@@ -1088,6 +1074,9 @@
                 snake[0].y * gridSize + gridSize/2,
                 30, '#FF3366'
             );
+            
+            // Iniciar cuenta regresiva para reinicio automático
+            startCountdown();
         }
         
         function startGame() {
@@ -1101,7 +1090,6 @@
             gameLoop = setInterval(() => {
                 if (!gamePaused) {
                     moveSnake();
-                    draw();
                 }
             }, gameSpeed);
         }
@@ -1123,10 +1111,11 @@
         
         function restartGame() {
             clearInterval(gameLoop);
+            if (countdownInterval) clearInterval(countdownInterval);
+            
             gameRunning = false;
             gamePaused = false;
             gameSpeed = 150;
-            updateGameSpeed();
             initGame();
             hideAllScreens();
             pauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
@@ -1137,19 +1126,6 @@
         // ============================================
         function updateScore() {
             scoreElement.textContent = score;
-            highScoreElement.textContent = highScore;
-        }
-        
-        function updateGameSpeed() {
-            if (gameSpeed >= 130) {
-                speedElement.textContent = 'Lenta';
-            } else if (gameSpeed >= 100) {
-                speedElement.textContent = 'Normal';
-            } else if (gameSpeed >= 70) {
-                speedElement.textContent = 'Rápida';
-            } else {
-                speedElement.textContent = 'Muy rápida';
-            }
         }
         
         function showScreen(screen) {
@@ -1185,7 +1161,7 @@
             }
         }
         
-        // Eventos para botones de dirección
+        // Eventos para botones de dirección - TODOS FUNCIONALES
         upBtn.addEventListener('click', () => changeDirection('up'));
         downBtn.addEventListener('click', () => changeDirection('down'));
         leftBtn.addEventListener('click', () => changeDirection('left'));
@@ -1199,7 +1175,7 @@
         playAgainBtn.addEventListener('click', restartGame);
         pauseBtn.addEventListener('click', pauseGame);
         
-        // Controles por teclado (opcional para tablets/PC)
+        // Controles por teclado (opcional)
         document.addEventListener('keydown', (e) => {
             if (!gameRunning || gamePaused) return;
             
@@ -1239,12 +1215,12 @@
             // Determinar dirección del swipe
             if (Math.abs(dx) > Math.abs(dy)) {
                 // Movimiento horizontal
-                if (dx > 20) changeDirection('right');
-                else if (dx < -20) changeDirection('left');
+                if (dx > 30) changeDirection('right');
+                else if (dx < -30) changeDirection('left');
             } else {
                 // Movimiento vertical
-                if (dy > 20) changeDirection('down');
-                else if (dy < -20) changeDirection('up');
+                if (dy > 30) changeDirection('down');
+                else if (dy < -30) changeDirection('up');
             }
         });
         
@@ -1303,7 +1279,6 @@
         window.addEventListener('load', () => {
             resizeCanvas();
             initGame();
-            updateGameSpeed();
             showScreen(startScreen);
         });
         
